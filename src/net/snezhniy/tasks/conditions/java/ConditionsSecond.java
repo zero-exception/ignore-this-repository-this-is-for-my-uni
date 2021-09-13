@@ -1,4 +1,4 @@
-package net.snezhniy.tasks.conditions;
+package net.snezhniy.tasks.conditions.java;
 
 import java.util.ArrayList;
 import java.util.Collections;

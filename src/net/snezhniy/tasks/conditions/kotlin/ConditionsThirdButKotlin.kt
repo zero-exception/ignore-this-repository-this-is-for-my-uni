@@ -1,4 +1,4 @@
-package net.snezhniy.tasks.conditions
+package net.snezhniy.tasks.conditions.kotlin
 
 class ConditionsThirdButKotlin {
     fun run() {
