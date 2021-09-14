@@ -1,5 +1,6 @@
 package net.snezhniy.tasks.progs1.kotlin
 
+import java.io.IOException
 import kotlin.math.exp
 import kotlin.math.sin
 
@@ -12,9 +13,12 @@ y=exp(-x)*sin(x), т.е. для каждого значения аргумент
 */
 
 class Prog3 {
-    private fun isValidStep(xn: Double, xk: Double, dx: Double): Boolean {
+    private fun getSteps(xk: Double, xn: Double, dx: Double): Int {
         val totalSteps = (xk - xn) / dx
-        return (totalSteps % 1.0) == 0.0
+        if ((totalSteps % 1.0) != 0.0)
+            throw IOException("Некорректное количество шагов")
+
+        return totalSteps.toInt()
     }
 
     private fun calculateValues(x: Double): Double {
@@ -31,25 +35,17 @@ class Prog3 {
         print("Укажите размер шага (dx): ")
         val dx = readLine()!!.toDouble()
 
-        if (!isValidStep(xn, xk, dx)) {
-            return println("Вы указали некорректное количество шагов.")
-        }
+        try {
+            val steps = getSteps(xk, xn, dx)
 
-        // Well, in kotlin for loops are kinda non-standard,
-        // so we can generate an ArrayList filled with Xs
-        val possibleXValues = ArrayList<Double>()
-        var i = xn
-        while (i <= xk) {
-            possibleXValues.add(i)
-            i += dx
-        }
-
-        // and then we can iterate over it using "for"
-        // iirc the idea of the task is to use "for"
-        // so here I am using for in my code :)
-        for (x in possibleXValues.iterator()) {
-            val y = calculateValues(x)
-            println("x = $x, y(x) = $y")
+            var x = xn
+            for (i in 0..steps) {
+                val y = calculateValues(x)
+                println("x = $x, y(x) = $y")
+                x += dx
+            }
+        } catch (e: IOException) {
+            println("Вы указали некорректный размер шага!")
         }
     }
 }
