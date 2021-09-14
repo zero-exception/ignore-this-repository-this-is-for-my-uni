@@ -1,7 +1,5 @@
 package net.snezhniy.tasks.progs1.kotlin
 
-import java.lang.reflect.Array
-
 /*
 Заполнить массив из 10 элементов случайными целыми числами. Найти
 индекс минимального числа в массиве и вывести его на консоль.
