@@ -1,7 +1,6 @@
 package net.snezhniy.tasks.progs1.kotlin
 
 import net.snezhniy.Utils
-import java.math.BigInteger
 
 
 /*
