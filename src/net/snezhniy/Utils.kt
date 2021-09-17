@@ -23,4 +23,15 @@ object Utils {
         result += "]"
         return result
     }
+
+    /* returns matrix column as array */
+    inline fun <reified T> getColumn(matrix: Array<Array<T>>, colIndex: Int): Array<T> {
+        val col = Array(matrix.size) { matrix[0][0] }
+
+        for ((index, row) in matrix.withIndex()) {
+            col[index] = row[colIndex]
+        }
+
+        return col
+    }
 }
