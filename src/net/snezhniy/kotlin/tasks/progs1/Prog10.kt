@@ -1,4 +1,4 @@
-package net.snezhniy.tasks.progs1.kotlin
+package net.snezhniy.kotlin.tasks.progs1
 
 /*
 Заполнить двумерный массив (матрицу) размером 5 строк, 4 столбца

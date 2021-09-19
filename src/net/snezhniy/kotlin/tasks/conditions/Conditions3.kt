@@ -1,6 +1,6 @@
-package net.snezhniy.tasks.conditions.kotlin
+package net.snezhniy.kotlin.tasks.conditions
 
-class ConditionsThirdButKotlin {
+class Conditions3 {
     fun run() {
         println("Укажите числа стороны трегольника.\nВведите первое число:")
         val a = readLine()?.trim()?.toInt()

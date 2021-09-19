@@ -1,4 +1,4 @@
-package net.snezhniy
+package net.snezhniy.kotlin
 
 object Utils {
     /* Gives string representation of a two-dimensional array aka matrix */

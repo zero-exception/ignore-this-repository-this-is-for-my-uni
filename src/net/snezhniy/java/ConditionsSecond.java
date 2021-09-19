@@ -1,8 +1,12 @@
-package net.snezhniy.tasks.conditions.java;
+package net.snezhniy.java;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
+
+/*
+ Ввести 3 числа, выдать на экран наименьшее (с поясняющим текстом)
+ */
 
 public class ConditionsSecond {
     Scanner scanner;

@@ -1,6 +1,6 @@
-package net.snezhniy.tasks.progs1.kotlin
+package net.snezhniy.kotlin.tasks.progs1
 
-import net.snezhniy.Utils
+import net.snezhniy.kotlin.Utils
 
 /*
 Заполнить двумерный массив (5х4) случайными целыми числами.

@@ -1,4 +1,4 @@
-package net.snezhniy.tasks.progs1.kotlin
+package net.snezhniy.kotlin.tasks.progs1
 
 import kotlin.math.exp
 import kotlin.math.sin

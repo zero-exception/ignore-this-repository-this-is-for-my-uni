@@ -1,9 +1,9 @@
-package net.snezhniy.tasks.conditions.kotlin
+package net.snezhniy.kotlin.tasks.conditions
 
 import java.util.Collections
 import kotlin.collections.ArrayList
 
-class ConditionsFifth {
+class Conditions5 {
 
     fun run() {
         val arr = ArrayList<Int>()
