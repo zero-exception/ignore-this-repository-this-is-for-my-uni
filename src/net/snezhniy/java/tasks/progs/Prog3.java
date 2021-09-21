@@ -29,9 +29,11 @@ package net.snezhniy.java.tasks.progs;
 быть сторонами треугольника (сумма двух любых больше третьего).
 */
 
+import net.snezhniy.java.Prog;
+
 import java.util.Scanner;
 
-public class Prog3 {
+public class Prog3 implements Prog {
     public void run() {
         var scan = new Scanner(System.in);
 

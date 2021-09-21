@@ -28,9 +28,11 @@ package net.snezhniy.java.tasks.progs;
 №1. Ввести 2 числа, выдать на экран наибольшее (с поясняющим текстом).
 */
 
+import net.snezhniy.java.Prog;
+
 import java.util.Scanner;
 
-public class Prog1 {
+public class Prog1 implements Prog {
     public void run() {
         var scanner = new Scanner(System.in);
 

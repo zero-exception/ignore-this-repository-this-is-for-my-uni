@@ -28,13 +28,15 @@ package net.snezhniy.java.tasks.progs;
 №2. Ввести 3 числа, выдать на экран наименьшее (с поясняющим текстом).
 */
 
+import net.snezhniy.java.Prog;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
-public class Prog2 {
+public class Prog2 implements Prog {
     public void run() {
         var scan = new Scanner(System.in);
 

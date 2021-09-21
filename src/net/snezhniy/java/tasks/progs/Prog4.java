@@ -31,10 +31,12 @@ package net.snezhniy.java.tasks.progs;
 какое-то число, программа прекращает работу (с уведомлением об этом).
 */
 
+import net.snezhniy.java.Prog;
+
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
-public class Prog4 {
+public class Prog4 implements Prog {
     public void run() {
         var scan = new Scanner(System.in);
 

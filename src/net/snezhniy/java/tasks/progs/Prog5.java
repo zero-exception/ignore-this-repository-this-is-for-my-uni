@@ -30,10 +30,12 @@ package net.snezhniy.java.tasks.progs;
 или меньше 10 или равно 10.
 */
 
+import net.snezhniy.java.Prog;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Prog5 {
+public class Prog5 implements Prog {
     public void run() {
         var scan = new Scanner(System.in);
         var numbers = new ArrayList<Integer>();

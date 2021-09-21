@@ -30,10 +30,12 @@ package net.snezhniy.java.tasks.progs;
 выхода из цикла (и программы) ввод значения 0 на запрос о действии.
  */
 
+import net.snezhniy.java.Prog;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Prog6 {
+public class Prog6 implements Prog {
     public String buildInfo(Iterable<Integer> numbers) {
         var info = new StringBuilder("\nДополнительная информация:\n");
         for (var n : numbers) {

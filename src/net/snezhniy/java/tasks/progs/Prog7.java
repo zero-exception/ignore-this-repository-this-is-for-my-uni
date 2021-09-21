@@ -32,9 +32,11 @@ y=exp(-x)*sin(x), т.е. для каждого значения аргумент
 Программу написать с использованием цикла while.
 */
 
+import net.snezhniy.java.Prog;
+
 import java.util.Scanner;
 
-public class Prog7 {
+public class Prog7 implements Prog {
     private boolean isValidStep(double xn, double xk, double dx) {
         var totalSteps = (xk - xn) / dx;
         return (totalSteps % 1.0) == 0.0;
