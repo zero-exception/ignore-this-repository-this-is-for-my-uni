@@ -40,7 +40,7 @@ public class Prog10 implements Prog {
     public void run() {
         var arr = new BigInteger[10];
         for (var i = 0; i < 10; i++) {
-            arr[i] = BigInteger.valueOf(ThreadLocalRandom.current().nextLong(-100, 101));
+            arr[i] = BigInteger.valueOf(ThreadLocalRandom.current().nextLong(-101, 101));
         }
 
         var sum = Arrays
