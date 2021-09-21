@@ -61,9 +61,11 @@ public class Prog7 {
             return;
         }
 
-        for (var x = xn; x <= xk; x += dx) {
+        var x = xn;
+        while (x <= xk) {
             var y = calculateValue(x);
             System.out.printf("x = %s, y(x) = %s\n", x, y);
+            x += dx;
         }
     }
 }
