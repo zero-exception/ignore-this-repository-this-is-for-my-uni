@@ -28,7 +28,6 @@ import net.snezhniy.java.Prog;
 
 import java.util.AbstractCollection;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 

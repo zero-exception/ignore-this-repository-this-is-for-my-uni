@@ -24,8 +24,6 @@
 
 package net.snezhniy.java;
 
-import net.snezhniy.java.Pair;
-
 public class Triple<S, U, V> extends Pair<S, U> {
     private V third;
 
