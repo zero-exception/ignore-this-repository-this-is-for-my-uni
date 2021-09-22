@@ -24,9 +24,8 @@
 
 package net.snezhniy.java.tasks.progs;
 
-import net.snezhniy.java.Pair;
 import net.snezhniy.java.Prog;
-import net.snezhniy.java.Utils;
+import net.snezhniy.java.Triple;
 
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
