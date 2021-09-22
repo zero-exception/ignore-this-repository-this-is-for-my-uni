@@ -49,8 +49,7 @@ public class Prog19 implements Prog {
         var columnsProducts = new BigInteger[4];
         for (int i = 0; i < columnsProducts.length; i++) {
             var column = Utils.getColumn(matrix, i)
-                    .map(String::valueOf)
-                    .map(BigInteger::new)
+                    .map(BigInteger::valueOf)
                     .reduce(BigInteger.ONE, BigInteger::multiply);
 
             columnsProducts[i] = column;
