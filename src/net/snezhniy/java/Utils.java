@@ -24,42 +24,17 @@
 
 package net.snezhniy.java;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.stream.Stream;
 
 public class Utils {
-    public static <T, E extends List<T>> String joinTwoDimArray(ArrayList<E> arr) {
-        StringBuilder result = new StringBuilder("[");
+    public static Stream<?> getColumn(Object[][] matrix, int colIndex) {
+        var col = Stream.builder();
 
-        for (int i = 0; i < arr.size(); i++) {
-            result.append("[");
-
-            var row = arr.get(i);
-            for (int j = 0; j < row.size(); j++) {
-                result.append(arr.get(i).get(j));
-                if (j != row.size() - 1) {
-                    result.append(", ");
-                }
-            }
-
-            result.append("]");
-            if (i != arr.size() - 1) {
-                result.append(", ");
-            }
+        for (var ts : matrix) {
+            col.add(ts[colIndex]);
         }
 
-        result.append("]");
-        return result.toString();
-    }
-
-    public static <T, E extends List<T>> ArrayList<T> getColumn(List<E> arr, int colIndex) {
-        var col = new ArrayList<T>();
-
-        for (int i = 0; i < arr.size(); i++) {
-            col.add(i, arr.get(i).get(colIndex));
-        }
-
-        return col;
+        return col.build();
     }
 
 }
