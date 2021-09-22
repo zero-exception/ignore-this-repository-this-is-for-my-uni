@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package net.snezhniy.java.tasks.progs;
+package net.snezhniy.java;
 
 import net.snezhniy.java.Pair;
 
