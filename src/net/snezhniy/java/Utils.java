@@ -27,8 +27,8 @@ package net.snezhniy.java;
 import java.util.stream.Stream;
 
 public class Utils {
-    public static Stream<?> getColumn(Object[][] matrix, int colIndex) {
-        var col = Stream.builder();
+    public static <T> Stream<T> getColumn(T[][] matrix, int colIndex) {
+        var col = Stream.<T>builder();
 
         for (var ts : matrix) {
             col.add(ts[colIndex]);
