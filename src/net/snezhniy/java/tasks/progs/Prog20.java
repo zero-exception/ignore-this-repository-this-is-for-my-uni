@@ -25,41 +25,46 @@
 package net.snezhniy.java.tasks.progs;
 
 import net.snezhniy.java.Prog;
-import net.snezhniy.java.Utils;
 
-import java.util.Arrays;
+import java.util.AbstractCollection;
+import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
 /*
-№10. Заполнить двумерный массив (5х4) случайными целыми числами.
-Сформировать одномерный массив, каждый элемент которого количество
-положительных чисел в столбце исходной матрицы. Матрицу и массив
-вывести на консоль.
+№11. Сформировать двумерный массив, в котором 5 строк, но в каждой
+строке разное количество столбцов (1 строка – 3 столбца, 2 строка – 2
+столбца, 3 строка – 5столбцов, 4 строка – 1 столбец, 5 строка – 6 столбцов).
+Заполнить двумерный массив случайными целыми числами, подсчитать
+сумму чисел в каждой строке. Вывести двумерный массив и суммы в каждой
+строке на консоль
 */
 
 public class Prog20 implements Prog {
     @Override
     public void run() {
-        var matrix = new Integer[5][4];
-        for (var i = 0; i < matrix.length; i++)
-            for (var j = 0; j < matrix[0].length; j++)
-                matrix[i][j] = ThreadLocalRandom.current().nextInt(-10, 11);
-
-        var columnPositives = new Integer[4];
-        for (var i = 0; i < columnPositives.length; i++) {
-            var positives = Utils.getColumn(matrix, i)
-                    .filter(x -> x > 0)
-                    .toArray().length;
-
-            columnPositives[i] = positives;
+        var matrix = new ArrayList<ArrayList<Integer>>();
+        for (var i = 0; i < 5; i++) {
+            var row = new ArrayList<Integer>();
+            var valuesAmount = ThreadLocalRandom.current().nextInt(1, 11);
+            for (var j = 0; j < valuesAmount; j++) {
+                var value = ThreadLocalRandom.current().nextInt(-10, 11);
+                row.add(value);
+            }
+            matrix.add(row);
         }
 
-        var joinedMatrix = Arrays.stream(matrix)
-                .map(Arrays::toString)
+        var rowSums = new ArrayList<Integer>();
+        for (var row : matrix) {
+            var sum = row.stream().mapToInt(i -> i).sum();
+            rowSums.add(sum);
+        }
+
+        var matrixJoined = matrix.stream()
+                .map(AbstractCollection::toString)
                 .collect(Collectors.joining(", "));
 
-        System.out.printf("Матрица: %s\n", joinedMatrix);
-        System.out.printf("Количество положительных значеий в каждом столбце: %s\n", Arrays.toString(columnPositives));
+        System.out.printf("Матрица: [%s]\n", matrixJoined);
+        System.out.printf("Суммы строк: %s\n", rowSums);
     }
 }

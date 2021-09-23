@@ -27,18 +27,18 @@ package net.snezhniy.java.tasks.progs;
 import net.snezhniy.java.Prog;
 import net.snezhniy.java.Utils;
 
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
 /*
-№10. Заполнить двумерный массив (5х4) случайными целыми числами.
-Сформировать одномерный массив, каждый элемент которого количество
-положительных чисел в столбце исходной матрицы. Матрицу и массив
-вывести на консоль.
+№9. Заполнить двумерный массив (5х4) случайными целыми числами.
+Сформировать одномерный массив, каждый элемент которого произведение
+чисел в столбце исходной матрицы. Матрицу и массив вывести на консоль.
 */
 
-public class Prog19 implements Prog {
+public class Prog18 implements Prog {
     @Override
     public void run() {
         var matrix = new Integer[5][4];
@@ -46,20 +46,20 @@ public class Prog19 implements Prog {
             for (var j = 0; j < matrix[0].length; j++)
                 matrix[i][j] = ThreadLocalRandom.current().nextInt(-10, 11);
 
-        var columnPositives = new Integer[4];
-        for (var i = 0; i < columnPositives.length; i++) {
-            var positives = Utils.getColumn(matrix, i)
-                    .filter(x -> x > 0)
-                    .toArray().length;
+        var columnsProducts = new BigInteger[4];
+        for (int i = 0; i < columnsProducts.length; i++) {
+            var column = Utils.getColumn(matrix, i)
+                    .map(BigInteger::valueOf)
+                    .reduce(BigInteger.ONE, BigInteger::multiply);
 
-            columnPositives[i] = positives;
+            columnsProducts[i] = column;
         }
 
         var joinedMatrix = Arrays.stream(matrix)
                 .map(Arrays::toString)
                 .collect(Collectors.joining(", "));
 
-        System.out.printf("Матрица: %s\n", joinedMatrix);
-        System.out.printf("Количество положительных значеий в каждом столбце: %s\n", Arrays.toString(columnPositives));
+        System.out.printf("Матрица: [%s]\n", joinedMatrix);
+        System.out.printf("Произведение столбоцов: %s\n", Arrays.toString(columnsProducts));
     }
 }
